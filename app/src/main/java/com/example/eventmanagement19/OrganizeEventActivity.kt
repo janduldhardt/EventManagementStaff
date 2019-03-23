@@ -15,9 +15,14 @@ class OrganizeEventActivity : AppCompatActivity() {
         val buttonList  =  ArrayList<CustomButton>()
         buttonList.add(CustomButton(R.drawable.ic_event_available_black_24dp, "Event Management"))
         buttonList.add(CustomButton(R.drawable.ic_event_available_black_24dp, "Staff Management"))
+        buttonList.add(CustomButton(R.drawable.ic_event_available_black_24dp, "QR Code Check-In"))
+        buttonList.add(CustomButton(R.drawable.ic_event_available_black_24dp, "Attendee Summary"))
+        buttonList.add(CustomButton(R.drawable.ic_event_available_black_24dp, "Statistics"))
 
 
-                RecyclerViewOrganizeEvents.apply {
+
+
+        RecyclerViewOrganizeEvents.apply {
                     setHasFixedSize(true)
                     layoutManager = LinearLayoutManager(context)
                     adapter = CustomButtonAdapter(context, buttonList)
