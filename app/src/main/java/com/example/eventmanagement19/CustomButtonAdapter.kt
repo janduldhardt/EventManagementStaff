@@ -1,13 +1,10 @@
 import CustomButtonAdapter.ViewHolder
 import android.content.Context
-import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.Toast
-import com.example.eventmanagement19.CustomButton
+import com.example.eventmanagement19.Model.CustomButton
 import com.example.eventmanagement19.R
 import kotlinx.android.synthetic.main.custom_button.view.image_custom_button
 import kotlinx.android.synthetic.main.custom_button.view.text_custom_button
@@ -39,8 +36,4 @@ RecyclerView.Adapter<ViewHolder>() {
             callback(item)
         }
     }
-}
-
-fun onclicked(int : Int){
-
 }
