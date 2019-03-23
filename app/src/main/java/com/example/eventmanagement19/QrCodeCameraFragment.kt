@@ -7,8 +7,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-
+import com.google.zxing.Result
+import me.dm7.barcodescanner.zxing.ZXingScannerView
 
 /**
  * A simple [Fragment] subclass.
@@ -19,13 +19,31 @@ import android.view.ViewGroup
  * create an instance of this fragment.
  *
  */
-class QrCodeCameraFragment : Fragment() {
+class QrCodeCameraFragment : Fragment(), ZXingScannerView.ResultHandler  {
+
+
+
+    private lateinit var mScannerView: ZXingScannerView
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_qr_code_camera, container, false)
+
+        return startQRCodeScanner()
+    }
+
+    fun startQRCodeScanner(): View {
+        mScannerView = ZXingScannerView(context)   // Programmatically initialize the scanner view
+        mScannerView.setResultHandler(this@QrCodeCameraFragment)
+        mScannerView.startCamera()
+        return mScannerView // Set the scanner view as the content view
+    }
+
+    override fun handleResult(p0: Result?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 }

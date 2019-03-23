@@ -12,8 +12,8 @@ import com.example.eventmanagement19.R
 import kotlinx.android.synthetic.main.custom_button.view.image_custom_button
 import kotlinx.android.synthetic.main.custom_button.view.text_custom_button
 
-class CustomButtonAdapter(private val context: Context, val inputList: List<CustomButton>?) :
-    RecyclerView.Adapter<ViewHolder>() {
+class CustomButtonAdapter(private val context: Context, private val inputList: List<CustomButton>, private val callback : (CustomButton) -> Unit) :
+RecyclerView.Adapter<ViewHolder>() {
 
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view)
@@ -36,10 +36,11 @@ class CustomButtonAdapter(private val context: Context, val inputList: List<Cust
         p0.view.text_custom_button.text = item.buttonText
 
         p0.itemView.setOnClickListener {
-            if(p0.view.text_custom_button.text == "Event Management"){
-                Toast.makeText(context, "Event Management", Toast.LENGTH_SHORT).show()
-            }
-
+            callback(item)
         }
     }
+}
+
+fun onclicked(int : Int){
+
 }

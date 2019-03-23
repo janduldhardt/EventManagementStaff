@@ -6,7 +6,9 @@ import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
+import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.view.View.OnCreateContextMenuListener
 import android.widget.Toast
 
 class QrCodeCheckInActivity : AppCompatActivity() {
@@ -25,8 +27,16 @@ class QrCodeCheckInActivity : AppCompatActivity() {
                 PERMISSION_CAMERA
             )
 
+        } else {
+            Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show()
+            setFragment(QrCodeCameraFragment(), "QrCodeCameraFragment")
         }
-        Toast.makeText(this, "Permission granted",Toast.LENGTH_SHORT).show()
+    }
+
+    private fun setFragment(fragment: Fragment, tag: String) {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frameLayoutQR, fragment, tag)
+            .commit()
     }
 
     override fun onRequestPermissionsResult(
@@ -36,6 +46,7 @@ class QrCodeCheckInActivity : AppCompatActivity() {
         when (requestCode) {
             PERMISSION_CAMERA -> {
                 if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    setFragment(QrCodeCameraFragment(), "QrCodeCameraFragment")
                     return
                 }
                 intent = Intent(this, OrganizeEventActivity::class.java)

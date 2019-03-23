@@ -7,6 +7,7 @@
     tools:context=".QrCodeCheckInActivity">
 
     <FrameLayout
+        android:id="@+id/frameLayoutQR"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
