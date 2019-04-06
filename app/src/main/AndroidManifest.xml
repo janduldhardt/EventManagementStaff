@@ -20,8 +20,8 @@
         <activity android:name=".OrganizeEventActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SelectEventActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".StaffManagementActivity">
+        <activity android:name=".StaffManagementActivity" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

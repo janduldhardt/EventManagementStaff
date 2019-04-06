@@ -58,6 +58,7 @@ class OrganizeEventActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(context)
             adapter = CustomButtonAdapter(context, buttonList) {
                 when (it.buttonId) {
+                    1 -> startActivity(Intent(context, StaffManagementActivity::class.java))
                     2 -> startActivity(Intent(context, QrCodeCheckInActivity::class.java))
                 }
             }

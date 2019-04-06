@@ -15,8 +15,8 @@ class AddStaffActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add_staff)
     }
 
-    fun onClickAddStaff(v: View){
-        var studentId = editText_studentId_addStaff.text
+    fun onClickAddStaff(v:View){
+        val studentId = editText_studentId_addStaff.text
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Confirm?")
             .setMessage("Are you sure to add $studentId as a staff member?")

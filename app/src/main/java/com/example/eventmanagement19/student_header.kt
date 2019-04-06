@@ -20,7 +20,7 @@ class student_header : LinearLayout {
     private lateinit var name: String
     private lateinit var school: String
 
-    fun init(header: String) {
+    fun init(name: String, school : String) {
         this.name = name
         this.school = school
         renderMenuHeaderTitleView()
