@@ -35,8 +35,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_header_organize_event" />
 
-    <view
-        class="android.support.v7.app.AlertController$RecycleListView"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/RecyclerViewSelectEvent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_header_organize_event">
 
-    </view>
+    </android.support.v7.widget.RecyclerView>
 
 
 </android.support.constraint.ConstraintLayout>

@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.eventmanagement19.Model.CustomButton
+import com.example.eventmanagement19.Model.Staff
+import com.example.eventmanagement19.Model.StaffList
 import com.example.eventmanagement19.Model.StaffManagementItem
 import com.example.eventmanagement19.StaffManagementAdapter.ViewHolder
 import kotlinx.android.synthetic.main.custom_button.view.image_custom_button
@@ -14,8 +16,9 @@ import kotlinx.android.synthetic.main.staff_management_item.view.text_count_staf
 import kotlinx.android.synthetic.main.staff_management_item.view.text_studentId_staffManagement_item
 import kotlinx.android.synthetic.main.staff_management_item.view.text_studentName_staffManagement_item
 
-class StaffManagementAdapter(private val context: Context, private val inputList: List<StaffManagementItem>, private val callback : (StaffManagementItem) -> Unit) :
+class StaffManagementAdapter(private val context: Context, private val inputList: StaffList, private val callback : (StaffList) -> Unit) :
     RecyclerView.Adapter<ViewHolder>() {
+    val itemList = inputList.staffList
 
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view)
@@ -27,20 +30,20 @@ class StaffManagementAdapter(private val context: Context, private val inputList
 
     override fun getItemCount(): Int {
         if (inputList != null) {
-            return inputList.size
+            return inputList.staffList.size
         }
         return 0
     }
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
-        var item = inputList!!.get(p1)
-        p0.view.text_studentId_staffManagement_item.text = item.studentId
-        p0.view.text_studentName_staffManagement_item.text = item.studentName
-        p0.view.text_count_staffManagement_item.text = item.count.toString()
+        var item = itemList!!.get(p1)
+        p0.view.text_studentId_staffManagement_item.text = item.studentId.toString()
+        p0.view.text_studentName_staffManagement_item.text = item.student.firstName + " " + item.student.lastName
+        p0.view.text_count_staffManagement_item.text = item.scanCount.toString()
 
 
         p0.itemView.setOnClickListener {
-            callback(item)
+            callback(inputList)
         }
     }
 }

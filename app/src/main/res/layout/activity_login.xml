@@ -35,6 +35,7 @@
         android:gravity="center"
         android:singleLine="true"
         android:maxEms="8"
+        android:text="6114567"
         android:hint="Username"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"

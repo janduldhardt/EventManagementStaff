@@ -28,6 +28,9 @@ class LoginActivity : AppCompatActivity() {
         val saved_values = PreferenceManager.getDefaultSharedPreferences(applicationContext)
         val editor = saved_values.edit()
         editor.putString("currentStudentId", currentStudentId)
+        //TODO: Delete this after test:
+        editor.putString("currentStudentName", "Nico Duldhardt")
+
         editor.commit()
     }
 }

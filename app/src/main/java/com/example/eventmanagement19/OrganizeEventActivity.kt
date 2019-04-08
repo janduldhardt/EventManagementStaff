@@ -8,12 +8,24 @@ import CustomButtonAdapter
 import android.content.Intent
 import com.example.eventmanagement19.Model.CustomButton
 import com.example.eventmanagement19.R.drawable
+import com.example.eventmanagement19.extensions.loadCurrentEventId
+import com.example.eventmanagement19.extensions.loadCurrentEventName
+import com.example.eventmanagement19.extensions.loadCurrentStudentId
+import com.example.eventmanagement19.extensions.loadCurrentStudentName
+import kotlinx.android.synthetic.main.activity_organize_event.student_header
 
 class OrganizeEventActivity : AppCompatActivity() {
+
+    lateinit var currentStudentName: String
+    lateinit var currentStudentId: String
+    lateinit var currentEventId: String
+    lateinit var currentEventName: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_organize_event)
+        loadVars() // Loads lateinit variables from SharedPreferences
+        student_header.init(currentStudentName, currentEventName)
 
         val buttonList = ArrayList<CustomButton>()
         buttonList.add(
@@ -63,5 +75,12 @@ class OrganizeEventActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun loadVars() {
+        currentStudentId = loadCurrentStudentId(this)
+        currentStudentName = loadCurrentStudentName(this)
+        currentEventId = loadCurrentEventId(this)
+        currentEventName = loadCurrentEventName(this)
     }
 }
