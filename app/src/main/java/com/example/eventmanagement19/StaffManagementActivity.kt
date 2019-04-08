@@ -6,15 +6,13 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.Toast
-import com.example.eventmanagement19.Model.Staff
 import com.example.eventmanagement19.Model.StaffList
-import com.example.eventmanagement19.Model.StaffManagementItem
 import com.example.eventmanagement19.extensions.loadCurrentEventId
 import com.example.eventmanagement19.extensions.loadCurrentEventName
 import com.example.eventmanagement19.extensions.loadCurrentStudentId
 import com.example.eventmanagement19.extensions.loadCurrentStudentName
-import kotlinx.android.synthetic.main.activity_organize_event.RecyclerViewOrganizeEvents
 import kotlinx.android.synthetic.main.activity_staff_management.RecyclerViewStaffManagement
+import kotlinx.android.synthetic.main.activity_staff_management.student_header2
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -30,6 +28,8 @@ class StaffManagementActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_staff_management)
         loadVars() // Loads lateinit variables from SharedPreferences
+
+        student_header2.init(currentStudentName, currentEventName)
         loadStaffList()
 
 
@@ -37,7 +37,9 @@ class StaffManagementActivity : AppCompatActivity() {
 
 
 
-        }
+
+
+    }
 
     private fun loadStaffList() {
         val client = RetrofitService().client

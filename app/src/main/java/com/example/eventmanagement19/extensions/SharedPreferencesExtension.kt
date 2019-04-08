@@ -22,3 +22,8 @@ fun loadCurrentEventId(context : Context) : String {
     val saved_values = PreferenceManager.getDefaultSharedPreferences(context)
     return saved_values.getString("currentEventId", "EventId not found")!!
 }
+
+fun loadCurrentOrganizerId(context : Context) : String {
+    val saved_values = PreferenceManager.getDefaultSharedPreferences(context)
+    return saved_values.getString("currentOrganizerId", "-1")!!
+}

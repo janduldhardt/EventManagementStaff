@@ -51,9 +51,4 @@ class SelectEventActivity : AppCompatActivity() {
             }
         })
     }
-
-    fun onClickSelectEvent(v: View){
-        val intent = Intent(this, OrganizeEventActivity::class.java)
-        startActivity(intent)
-    }
 }

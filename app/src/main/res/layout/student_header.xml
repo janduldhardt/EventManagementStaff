@@ -39,7 +39,7 @@
 
             android:fontFamily="@font/bariol_regular"
             android:singleLine="true"
-            android:text="Jan Duldhardt"
+            android:text="Name"
             android:textColor="@color/MainFont"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/circleImageView-student_Header"
@@ -51,7 +51,7 @@
             android:layout_height="15dp"
             android:fontFamily="@font/bariol_regular"
             android:singleLine="true"
-            android:text="Vincent Mary School Science and Technology"
+            android:text="School / More Information"
             app:autoSizeTextType="uniform"
             android:textColor="@color/SecondFont"
             app:layout_constraintRight_toRightOf="parent"
