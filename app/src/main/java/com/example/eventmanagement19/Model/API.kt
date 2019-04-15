@@ -20,6 +20,9 @@ interface API {
     @GET("/event/isOrganizer")
     fun getIsOrganizer(@Query("studentId") studentId: Long) : Call<Long>
 
+    @GET("/event/getStudentById")
+    fun getStudentById(@Query("studentId") studentId: Long) : Call<Student>
+
     @POST("/event/addStaff")
     fun addStaff(@Body staff: Staff): Call<Void>
 
