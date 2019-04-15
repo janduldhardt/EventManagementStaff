@@ -8,10 +8,7 @@ import CustomButtonAdapter
 import android.content.Intent
 import com.example.eventmanagement19.Model.CustomButton
 import com.example.eventmanagement19.R.drawable
-import com.example.eventmanagement19.extensions.loadCurrentEventId
-import com.example.eventmanagement19.extensions.loadCurrentEventName
-import com.example.eventmanagement19.extensions.loadCurrentStudentId
-import com.example.eventmanagement19.extensions.loadCurrentStudentName
+import com.example.eventmanagement19.extensions.*
 import kotlinx.android.synthetic.main.activity_organize_event.student_header
 
 class OrganizeEventActivity : AppCompatActivity() {
@@ -20,47 +17,64 @@ class OrganizeEventActivity : AppCompatActivity() {
     lateinit var currentStudentId: String
     lateinit var currentEventId: String
     lateinit var currentEventName: String
+    lateinit var currentOrganizerId: String
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_organize_event)
         loadVars() // Loads lateinit variables from SharedPreferences
-        student_header.init(currentStudentName, currentEventName)
-
         val buttonList = ArrayList<CustomButton>()
-        buttonList.add(
-            CustomButton(
-                drawable.ic_event_available_black_24dp, "Event Management", 0
+
+        if(currentOrganizerId != "-1") {
+
+            student_header.init(currentStudentName, currentEventName)
+
+            buttonList.add(
+                    CustomButton(
+                            drawable.ic_event_available_black_24dp, "Event Management", 0
+                    )
             )
-        )
-        buttonList.add(
-            CustomButton(
-                drawable.ic_event_available_black_24dp,
-                "Staff Management",
-                1
+            buttonList.add(
+                    CustomButton(
+                            drawable.ic_event_available_black_24dp,
+                            "Staff Management",
+                            1
+                    )
             )
-        )
-        buttonList.add(
-            CustomButton(
-                drawable.ic_event_available_black_24dp,
-                "QR Code Check-In",
-                2
+
+            buttonList.add(
+                    CustomButton(
+                            drawable.ic_event_available_black_24dp,
+                            "QR Code Check-In",
+                            2
+                    )
             )
-        )
-        buttonList.add(
-            CustomButton(
-                drawable.ic_event_available_black_24dp,
-                "Attendee Summary",
-                3
+
+            buttonList.add(
+                    CustomButton(
+                            drawable.ic_event_available_black_24dp,
+                            "Attendee Summary",
+                            3
+                    )
             )
-        )
-        buttonList.add(
-            CustomButton(
-                drawable.ic_event_available_black_24dp,
-                "Statistics",
-                4
+            buttonList.add(
+                    CustomButton(
+                            drawable.ic_event_available_black_24dp,
+                            "Statistics",
+                            4
+                    )
             )
-        )
+        } else {
+            buttonList.add(
+                    CustomButton(
+                            drawable.ic_event_available_black_24dp,
+                            "QR Code Check-In",
+                            2
+                    )
+            )
+        }
 
 
 
@@ -82,5 +96,6 @@ class OrganizeEventActivity : AppCompatActivity() {
         currentStudentName = loadCurrentStudentName(this)
         currentEventId = loadCurrentEventId(this)
         currentEventName = loadCurrentEventName(this)
+        currentOrganizerId = loadCurrentOrganizerId(this)
     }
 }
