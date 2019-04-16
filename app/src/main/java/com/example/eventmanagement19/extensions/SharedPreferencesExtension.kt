@@ -27,3 +27,8 @@ fun loadCurrentOrganizerId(context : Context) : String {
     val saved_values = PreferenceManager.getDefaultSharedPreferences(context)
     return saved_values.getString("currentOrganizerId", "-1")!!
 }
+
+fun loadCurrentEventImageUrl(context : Context) : String {
+    val saved_values = PreferenceManager.getDefaultSharedPreferences(context)
+    return saved_values.getString("currentEventImageUrl","")!!
+}

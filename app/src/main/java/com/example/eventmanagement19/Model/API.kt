@@ -1,6 +1,7 @@
 package com.example.eventmanagement19.Model
 
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -25,6 +26,9 @@ interface API {
 
     @POST("/event/addStaff")
     fun addStaff(@Body staff: Staff): Call<Void>
+
+    @GET("/event/GetAttendeeSummaryByEventId")
+    fun getAttendeeSummaryByEventId(@Query("eventId") eventId : Long) : Call<AttendeeSummary>
 
 
 
