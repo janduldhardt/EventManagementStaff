@@ -31,6 +31,14 @@ interface API {
     fun getAttendeeSummaryByEventId(@Query("eventId") eventId : Long) : Call<AttendeeSummary>
 
 
+    @GET("/event/checkedInByStaffId")
+    fun getCheckedInByStaffId(@Query("qrContent") qrContent: String,
+                 @Query("staffId") staffId : Long): Call<Student>
+
+    @GET("/event/getStaffId")
+    fun getStaffId(@Query("studentId") studentId: Long,
+                 @Query("eventId") eventId: Long): Call<Student>
+
 
 
 
