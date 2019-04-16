@@ -29,8 +29,7 @@ class AttendeeSummaryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_attendee_summary)
-//        currentEventId = loadCurrentEventId(this)
-        currentEventId = "1"
+        currentEventId = loadCurrentEventId(this)
         loadVars()
         student_header.init(currentEventName, "Attendee Summary")
         loadData()
@@ -86,8 +85,7 @@ class AttendeeSummaryActivity : AppCompatActivity() {
         val options = RequestOptions()
         options.centerCrop()
         Glide.with(this@AttendeeSummaryActivity)
-//            .load(currentEventImageUrl)
-            .load("https://firebasestorage.googleapis.com/v0/b/githubservice-ad4bc.appspot.com/o/images%2F15138498_1126729530773668_4357676554601677621_o.jpg?alt=media&token=2e4933ec-ebc3-4c2a-9b61-d37343955820")
+            .load(currentEventImageUrl)
             .apply(options)
             .into(image_attendee_summary)
     }

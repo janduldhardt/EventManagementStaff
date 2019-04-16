@@ -16,14 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".AttendeeSummaryActivity"></activity>
         <activity android:name=".AddStaffActivity" />
         <activity android:name=".QrCodeCheckInActivity" />
         <activity android:name=".OrganizeEventActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SelectEventActivity" />
         <activity android:name=".StaffManagementActivity" />
-        <activity android:name=".AttendeeSummaryActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

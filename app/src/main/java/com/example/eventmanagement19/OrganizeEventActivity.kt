@@ -86,6 +86,7 @@ class OrganizeEventActivity : AppCompatActivity() {
                 when (it.buttonId) {
                     1 -> startActivity(Intent(context, StaffManagementActivity::class.java))
                     2 -> startActivity(Intent(context, QrCodeCheckInActivity::class.java))
+                    3 -> startActivity(Intent(context, AttendeeSummaryActivity::class.java))
                 }
             }
         }
