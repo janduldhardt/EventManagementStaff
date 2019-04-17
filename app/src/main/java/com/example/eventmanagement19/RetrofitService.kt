@@ -11,7 +11,8 @@ class RetrofitService {
 
     init {
         val retrofit = Retrofit.Builder()
-                .baseUrl("http://testevent20181121095158.azurewebsites.net")
+//                .baseUrl("http://testevent20181121095158.azurewebsites.net")
+            .baseUrl("http://uevent.ap-southeast-1.elasticbeanstalk.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
