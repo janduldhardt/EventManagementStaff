@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    android:id="@+id/test">
+
+    <View
+            android:id="@+id/custom_button_attende_mainView"
+            android:layout_width="@id/test"
+            android:layout_height="@id/test"
+            android:background="@drawable/rounded_corner_grey"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent">
+
+    </View>
+
+    <TextView
+            android:id="@+id/custom_button_labelInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Size"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/custom_button_attende_mainView"
+            app:layout_constraintStart_toStartOf="@+id/custom_button_attende_mainView"
+            app:layout_constraintTop_toTopOf="@+id/custom_button_attende_mainView"/>
+
+    <TextView
+            android:id="@+id/custom_button_shirt_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="F"
+            android:textSize="20dp"
+            android:textColor="@color/red"
+            app:layout_constraintBottom_toBottomOf="@+id/custom_button_labelInfo"
+            app:layout_constraintStart_toEndOf="@+id/custom_button_labelInfo"
+            app:layout_constraintTop_toTopOf="@+id/custom_button_labelInfo"
+    />
+
+    <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_person"
+            app:layout_constraintBottom_toBottomOf="@+id/custom_button_attende_mainView"
+            app:layout_constraintEnd_toEndOf="@+id/custom_button_attende_mainView"
+            app:layout_constraintTop_toTopOf="@+id/custom_button_attende_mainView"
+        android:tint="@color/grey"/>
+
+    <TextView
+            android:id="@+id/custom_button_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textSize="20dp"
+            android:text="10"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+    />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -58,6 +58,8 @@ class EventAdapter(private val context: Context, val inputList: List<Event>?) :
             val editor = saved_values.edit()
             editor.putString("currentEventId", item.eventId.toString())
             editor.putString("currentEventName", item.eventTitle)
+            editor.putString("currentEventImageUrl", item.eventImage)
+
             editor.commit()
             val intent = Intent(context, OrganizeEventActivity::class.java)
             context.startActivity(intent)

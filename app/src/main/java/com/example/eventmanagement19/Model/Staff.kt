@@ -1,6 +1,6 @@
 package com.example.eventmanagement19.Model
 
-public class Staff(
+class Staff(
     val studentId : Long,
     val organizerId : Long,
     val eventId : Long,

@@ -9,20 +9,22 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".AddStaffActivity"></activity>
-        <activity android:name=".QrCodeCheckInActivity" />
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".AttendeeSummaryActivity" />
+        <activity android:name=".AddStaffActivity" />
+        <activity android:name=".StatisticsActivity" />
         <activity android:name=".OrganizeEventActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SelectEventActivity" />
         <activity android:name=".StaffManagementActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".QrCodeCheckInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -36,7 +36,7 @@ class StaffManagementAdapter(private val context: Context, private val inputList
     }
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
-        var item = itemList!!.get(p1)
+        var item = itemList.get(p1)
         p0.view.text_studentId_staffManagement_item.text = item.studentId.toString()
         p0.view.text_studentName_staffManagement_item.text = item.student.firstName + " " + item.student.lastName
         p0.view.text_count_staffManagement_item.text = item.scanCount.toString()

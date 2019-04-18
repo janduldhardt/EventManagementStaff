@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.View
 import android.widget.Toast
+import com.example.eventmanagement19.Model.Student
 import kotlinx.android.synthetic.main.activity_login.entry_username_login
 import retrofit2.Call
 import retrofit2.Callback
@@ -15,6 +16,11 @@ class LoginActivity : AppCompatActivity() {
 
     lateinit var currentStudentId : String
     lateinit var currentOrganizerId : String
+    lateinit var currentStudentName : String
+
+    lateinit var loginString : String
+
+
 
 
 
@@ -24,8 +30,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun onClickLogin(v: View){
-        currentStudentId = entry_username_login.text.toString()
-        checkOrganizerId()
+        loginString = entry_username_login.text.toString()
+        getStudentInformation()
     }
 
     fun saveInPreferences() {
@@ -55,6 +61,23 @@ class LoginActivity : AppCompatActivity() {
                 saveInPreferences()
                 val intent = Intent(this@LoginActivity, SelectEventActivity::class.java)
                 startActivity(intent)
+            }
+        })
+    }
+
+    fun getStudentInformation(){
+        val call = RetrofitService().client.getStudentById(loginString.toLong())
+        call.enqueue(object : Callback<Student>{
+            override fun onFailure(call: Call<Student>, t: Throwable) {
+                Toast.makeText(this@LoginActivity, t.toString(), Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<Student>, response: Response<Student>) {
+                val responseStudent = response.body()!!
+                currentStudentName = "${responseStudent.firstName} ${responseStudent.lastName}"
+                currentStudentId = loginString
+
+                checkOrganizerId()
             }
         })
 

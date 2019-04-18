@@ -61,6 +61,7 @@ class AddStaffActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 Toast.makeText(this@AddStaffActivity, response.code().toString(), Toast.LENGTH_SHORT).show()
+                editText_studentId_addStaff.setText("")
             }
         })
     }

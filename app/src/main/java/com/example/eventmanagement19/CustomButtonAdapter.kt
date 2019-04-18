@@ -28,7 +28,7 @@ RecyclerView.Adapter<ViewHolder>() {
     }
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
-        var item = inputList!!.get(p1)
+        var item = inputList.get(p1)
         p0.view.image_custom_button.setImageResource(item.mImageResource)
         p0.view.text_custom_button.text = item.buttonText
 
