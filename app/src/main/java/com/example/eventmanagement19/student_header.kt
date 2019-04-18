@@ -2,7 +2,6 @@ package com.example.eventmanagement19
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.View
 import android.widget.LinearLayout
 import com.example.eventmanagement19.extensions.inflate
 import kotlinx.android.synthetic.main.student_header.view.*
@@ -27,7 +26,7 @@ class student_header : LinearLayout {
     }
 
     private fun renderMenuHeaderTitleView() {
-        tv_Name_Student_Header.text = name
-        tv_school_student_header.text = school
+        tv_student_header_row1.text = name
+        tv_student_header_row2.text = school
     }
 }
