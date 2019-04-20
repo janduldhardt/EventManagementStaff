@@ -9,6 +9,7 @@
     <com.example.eventmanagement19.student_header
         android:id="@+id/student_header"
         android:layout_width="match_parent"
+        name="hdjahkjdhkajsd"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
